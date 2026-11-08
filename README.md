@@ -137,7 +137,7 @@ Prints na pasta `evidencias/`:
 | [`start-api-lazy-curl.png`](./evidencias/06-start-api-lazy-curl.png) | `--warm-containers LAZY`: contador 1, 2, 3 |
 | [`start-api-lazy-logs.png`](./evidencias/07-start-api-lazy-logs.png) | Logs: container criado na 1ª chamada |
 | [`start-api-semflag-curl.png`](./evidencias/08-start-api-semflag-curl.png) | Sem flag: contador 1, 1, 1 |
-| [`start-api-semflag-logs.png`](./evidencias/09-start-api-semflag-logs.png) | Logs: um container novo por chamada |
+| [`start-api-semflag-logs(1).png`](./evidencias/09-start-api-semflag-logs(1).png) e [`start-api-semflag-logs(2).png`](./evidencias/09-start-api-semflag-logs(2).png) | Logs: um container novo por chamada |
 | [`timeout-3s-curl.png`](./evidencias/10-timeout-3s-curl.png) | Resposta 502 BAD GATEWAY |
 | [`timeout-3s-logs.png`](./evidencias/11-timeout-3s-logs.png) | `timed out after 3 seconds` | 
 | [`timeout-10s-curl.png`](./evidencias/12-timeout-10s-curl.png) |  Resposta 201 CREATED, guia `G-R-003` |
