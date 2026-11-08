@@ -23,7 +23,7 @@ serverless-rota-vital/
 
 **Pré-requisitos:** Docker Desktop aberto, AWS SAM CLI (`sam --version`) e Python 3.12 (o `sam build` exige o 3.12 no PATH).
 
-Todos os comandos rodam dentro de `rota-vital-guias/` (testado no PowerShell, Windows).
+Todos os comandos rodam dentro de [`rota-vital-guias/`](./rota-vital-guias) (testado no PowerShell, Windows).
 
 **1. Build**
 
@@ -39,7 +39,7 @@ $env:Path = "C:\Users\andre\AppData\Local\Programs\Python\Python312;" + $env:Pat
 
 **2. Invocar a função com um evento**
 
-O `events/pedido.json` foi gerado com:
+O [`events/pedido.json`](./rota-vital-guias/events/pedido.json) foi gerado com:
 
 ```powershell
 $body = '{\"requisicaoId\":\"R-001\",\"hospital\":\"H-Recife\",\"bolsas\":[\"O-NEG-0142\"]}'
@@ -129,24 +129,24 @@ Prints na pasta `evidencias/`:
 
 | Arquivo | O que mostra |
 |---|---|
-| `sam-build-sucesso.png` | `sam build` concluído (Build Succeeded) |
-| `invoke-1.png` | 1ª invocação com evento: 201, Duration 389,36 ms |
-| `invoke-2.png` | 2ª invocação com evento: 201, Duration 196,34 ms |
-| `04-start-api-eager-curl.png` | `start-api` com `EAGER` do `samconfig.toml`: contador 1, 2, 3 |
-| `05-start-api-eager-logs.png` | Logs: container já de pé na partida |
-| `06-start-api-lazy-curl.png` | `--warm-containers LAZY`: contador 1, 2, 3 |
-| `07-start-api-lazy-logs.png` | Logs: container criado na 1ª chamada |
-| `08-start-api-semflag-curl.png` | Sem flag: contador 1, 1, 1 |
-| `09-start-api-semflag-logs.png` | Logs: um container novo por chamada |
-| `10-timeout-3s-curl.png` | Resposta 502 BAD GATEWAY |
-| `11-timeout-3s-logs.png` | `timed out after 3 seconds` | 
-| `12-timeout-10s-curl.png` |  Resposta 201 CREATED, guia `G-R-003` |
-| `13-timeout-10s-logs.png` | `REPORT` com Duration 5465,53 ms | 
+| [`sam-build-sucesso.png`](./evidencias/01-sam-build-sucesso.png) | `sam build` concluído (Build Succeeded) |
+| [`invoke-1.png`](./evidencias/02-invoke-1.png) | 1ª invocação com evento: 201, Duration 389,36 ms |
+| [`invoke-2.png`](./evidencias/03-invoke-2.png)| 2ª invocação com evento: 201, Duration 196,34 ms |
+| [`start-api-eager-curl.png`](./evidencias/04-start-api-eager-curl.png) | `start-api` com `EAGER` do `samconfig.toml`: contador 1, 2, 3 |
+| [`start-api-eager-logs.png`](./evidencias/05-start-api-eager-logs.png) | Logs: container já de pé na partida |
+| [`start-api-lazy-curl.png`](./evidencias/06-start-api-lazy-curl.png) | `--warm-containers LAZY`: contador 1, 2, 3 |
+| [`start-api-lazy-logs.png`](./evidencias/07-start-api-lazy-logs.png) | Logs: container criado na 1ª chamada |
+| [`start-api-semflag-curl.png`](./evidencias/08-start-api-semflag-curl.png) | Sem flag: contador 1, 1, 1 |
+| [`start-api-semflag-logs.png`](./evidencias/09-start-api-semflag-logs.png) | Logs: um container novo por chamada |
+| [`timeout-3s-curl.png`](./evidencias/10-timeout-3s-curl.png) | Resposta 502 BAD GATEWAY |
+| [`timeout-3s-logs.png`](./evidencias/11-timeout-3s-logs.png) | `timed out after 3 seconds` | 
+| [`timeout-10s-curl.png`](./evidencias/12-timeout-10s-curl.png) |  Resposta 201 CREATED, guia `G-R-003` |
+| [`timeout-10s-logs.png`](./evidencias/13-timeout-10s-logs.png) | `REPORT` com Duration 5465,53 ms | 
 
 ## 🤖 Uso de IA
 
 **Ferramenta:** Claude (Anthropic).
 
-**Finalidade:** apoio na configuração do ambiente (SAM CLI, Docker e Python 3.12 no Windows), na depuração de erros (PATH, formato do evento, `samconfig.toml`), na explicação dos conceitos de serverless e na revisão das minhas respostas, que escrevi em rascunho e a IA ajudou a corrigir.
+**Finalidade:** apoio na configuração do ambiente (SAM CLI, Docker e Python 3.12 no Windows), na depuração de erros (PATH, formato do evento, [`samconfig.toml`](./rota-vital-guias/samconfig.toml)), na explicação dos conceitos de serverless e na revisão das minhas respostas, que escrevi em rascunho e a IA ajudou a corrigir.
 
 **Como validei:** executei todos os comandos e conferi as saídas nos logs e nos prints de `evidencias/`, comparei o comportamento com o PDF e com a documentação do SAM, e refiz a conta de custo passo a passo.
