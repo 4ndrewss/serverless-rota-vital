@@ -1,4 +1,4 @@
-# Atividade individual 1: Serverless
+# ☁️ Atividade 1: Serverless
 
 Infraestrutura de Software · ADS · CESAR School · 2026.2
 
@@ -6,7 +6,7 @@ Função serverless que recebe uma requisição do Rota Vital e devolve a guia d
 
 **Caminho escolhido:** Caminho A (AWS SAM CLI local), sem conta em provedor de nuvem.
 
-## Estrutura
+## 🏗️ Estrutura
 
 ```
 serverless-rota-vital/
@@ -19,7 +19,7 @@ serverless-rota-vital/
 └── README.md
 ```
 
-## Como rodar
+## ▶️ Como rodar
 
 **Pré-requisitos:** Docker Desktop aberto, AWS SAM CLI (`sam --version`) e Python 3.12 (o `sam build` exige o 3.12 no PATH).
 
@@ -76,13 +76,13 @@ curl.exe -i -X POST http://127.0.0.1:3000/guias -H "Content-Type: application/js
 
 O `Timeout` fica em `Globals` do `template.yaml`. Rodei com 3 s (erro) e depois com 10 s (sucesso). O valor final no repositório é **10**. Depois de mudar o `template.yaml`, rode `sam build` de novo.
 
-## Observações do ambiente
+## 🔎 Observações do ambiente
 
 - O `sam init` gerou o template com `python3.14`; troquei para `python3.12`, como pede a atividade.
 - O `samconfig.toml` gerado trazia `warm_containers = "EAGER"` em `local_start_api`, o que mudava o resultado do teste "sem flag". Removi esse bloco (ver Pergunta 2).
 - Ao parar o `start-api` com `Ctrl+C`, o SAM CLI exibiu um `Fatal Python error` na limpeza interna (parada do observador de arquivos). Ocorreu depois das chamadas terminarem com 201 e não afeta a função.
 
-## Perguntas
+## 🗨️ Perguntas
 
 ### 1. Por que a primeira invocação demorou mais que a segunda? O que acontece na fase de Init?
 
@@ -123,7 +123,7 @@ Preços de us-east-1 da aula: US$ 0,20 por milhão de requisições e US$ 0,0000
 
 **Onde não faria sentido:** em partes que recebem chamadas o dia todo, como a API principal usada pelos hospitais, em que um servidor ligado costuma sair mais barato. Também não serve para o que depende de estado em memória (estoque, fila de requisições, histórico), porque o serverless não garante estado entre chamadas.
 
-## Evidências
+## 📸 Evidências
 
 Prints na pasta `evidencias/`:
 
@@ -138,12 +138,12 @@ Prints na pasta `evidencias/`:
 | `07-start-api-lazy-logs.png` | Logs: container criado na 1ª chamada |
 | `08-start-api-semflag-curl.png` | Sem flag: contador 1, 1, 1 |
 | `09-start-api-semflag-logs.png` | Logs: um container novo por chamada |
-| `10-timeout-3s-logs.png` | `timed out after 3 seconds` |
-| `11-timeout-3s-curl.png` | Resposta 502 BAD GATEWAY |
-| `12-timeout-10s-logs.png` | `REPORT` com Duration 5465,53 ms |
-| `13-timeout-10s-curl.png` | Resposta 201 CREATED, guia `G-R-003` |
+| `10-timeout-3s-curl.png` | Resposta 502 BAD GATEWAY |
+| `11-timeout-3s-logs.png` | `timed out after 3 seconds` | 
+| `12-timeout-10s-curl.png` |  Resposta 201 CREATED, guia `G-R-003` |
+| `13-timeout-10s-logs.png` | `REPORT` com Duration 5465,53 ms | 
 
-## Uso de IA
+## 🤖 Uso de IA
 
 **Ferramenta:** Claude (Anthropic).
 
