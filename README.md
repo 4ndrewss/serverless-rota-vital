@@ -2,6 +2,10 @@
 
 Infraestrutura de Software · ADS · CESAR School · 2026.2
 
+**Caminho escolhido:** Caminho A (AWS SAM CLI local), sem conta em provedor de nuvem.
+
+**Vídeo (2min 30s):** [link do vídeo](https://youtu.be/ZGYOyEVQl-k?is=2Ej7tyq8Fy-TP06v)
+
 Função serverless que recebe uma requisição do Rota Vital e devolve a guia de transporte, acionada por evento (`sam local invoke`) e por HTTP (`sam local start-api`).
 
 **Caminho escolhido:** Caminho A (AWS SAM CLI local), sem conta em provedor de nuvem.
@@ -149,4 +153,4 @@ Prints na pasta `evidencias/`:
 
 **Finalidade:** apoio na configuração do ambiente (SAM CLI, Docker e Python 3.12 no Windows), na depuração de erros (PATH, formato do evento, [`samconfig.toml`](./rota-vital-guias/samconfig.toml)), na explicação dos conceitos de serverless e na revisão das minhas respostas, que escrevi em rascunho e a IA ajudou a corrigir.
 
-**Como validei:** executei todos os comandos e conferi as saídas nos logs e nos prints de `evidencias/`, comparei o comportamento com o PDF e com a documentação do SAM, e refiz a conta de custo passo a passo.
+**Como validei:** executei todos os comandos e conferi as saídas nos logs e nos prints de [`evidencias/`](./evidencias/), comparei o comportamento com o PDF e com a documentação do SAM, e refiz a conta de custo passo a passo.
