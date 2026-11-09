@@ -2,13 +2,11 @@
 
 Infraestrutura de Software · ADS · CESAR School · 2026.2
 
-**Caminho escolhido:** Caminho A (AWS SAM CLI local), sem conta em provedor de nuvem.
-
-**Vídeo (2min 30s):** [link do vídeo](https://youtu.be/ZGYOyEVQl-k?is=2Ej7tyq8Fy-TP06v)
-
 Função serverless que recebe uma requisição do Rota Vital e devolve a guia de transporte, acionada por evento (`sam local invoke`) e por HTTP (`sam local start-api`).
 
 **Caminho escolhido:** Caminho A (AWS SAM CLI local), sem conta em provedor de nuvem.
+
+**Vídeo (2min 30s):** [link do vídeo](https://youtu.be/ZGYOyEVQl-k?is=2Ej7tyq8Fy-TP06v)
 
 ## 🏗️ Estrutura
 
